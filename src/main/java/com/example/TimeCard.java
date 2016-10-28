@@ -17,17 +17,16 @@ public class TimeCard {
     private long id;
 
     private String name;
-    private double pricePerNight;
-    private int nboKnights;
+    private String stratTime;
+    private String endTime;
 
 
     public TimeCard(){}
 
-
-    public TimeCard(String hotelName, double pricePerNight, int nboKnights) {
-        this.name = hotelName;
-        this.pricePerNight = pricePerNight;
-        this.nboKnights = nboKnights;
+    public TimeCard(String name, String stratTime, String endTime) {
+        this.name = name;
+        this.stratTime = stratTime;
+        this.endTime = endTime;
     }
 
     public String getName() {
@@ -35,22 +34,15 @@ public class TimeCard {
     }
 
 
-
-    public double getPricePerNight() {
-        return pricePerNight;
-    }
-
-
-
-    public int getNboKnights() {
-        return nboKnights;
-    }
-
-    public double getTotalPrice(){
-        return pricePerNight * nboKnights;
-    }
-
     public long getId() {
         return id;
+    }
+
+    public String getStratTime() {
+        return stratTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
     }
 }

@@ -14,23 +14,23 @@ import java.util.List;
 @Component
 public class DateBaseSeeder implements CommandLineRunner {
 
-private TimeCardRep bookingRep;
+private TimeCardRep timeCardRep;
 
     @Autowired
-    public DateBaseSeeder(TimeCardRep bookingRep){
-        this.bookingRep = bookingRep;
+    public DateBaseSeeder(TimeCardRep rep){
+        this.timeCardRep = rep;
     }
 
 
     @Override
     public void run(String... strings) throws Exception {
 
-        List<TimeCard> bookings= new ArrayList<>();
+        List<TimeCard> timeCard= new ArrayList<>();
 
-        bookings.add(new TimeCard("Marriots",200.50,3));
-        bookings.add(new TimeCard("Trump",120.90,5));
-        bookings.add(new TimeCard("phil",10.90,7));
+        timeCard.add(new TimeCard("Caonabo Castro","9:30","5:33"));
+        timeCard.add(new TimeCard("Trump Winn","1:00","2:45"));
+        timeCard.add(new TimeCard("Phil Bakes","8:30","4:33"));
 
-        bookingRep.save(bookings);
+        timeCardRep.save(timeCard);
     }
 }

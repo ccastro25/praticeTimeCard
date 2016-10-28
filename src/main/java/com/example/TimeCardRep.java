@@ -2,6 +2,7 @@ package com.example;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public interface TimeCardRep extends JpaRepository<TimeCard,Long> {
 
-    List<TimeCard> findByPricePerNightLessThan(double price);
+    public List<TimeCard> findByName(String name);
 
 }
 

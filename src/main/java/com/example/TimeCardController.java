@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by castro on 10/27/16.
  */
-@RestController(value = "/timeCard")
+@RestController(value = "/bookings")
 public class TimeCardController {
 
     private TimeCardRep timeCardRep;
@@ -25,15 +25,19 @@ public List<TimeCard> getAll(){
 }
 
 
+@RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
+public List<TimeCard> getAffordable(@PathVariable String name){
+    return timeCardRep.findByName(name);
+}
 
 @RequestMapping(value = "/create",method = RequestMethod.POST )
-public List<TimeCard> create (@RequestBody TimeCard hotelBooking){
-    timeCardRep.save(hotelBooking);
+public List<TimeCard> create (@RequestBody TimeCard timecards){
+    timeCardRep.save(timecards);
 
     return timeCardRep.findAll();
 }
 
-@RequestMapping(value = "/remove",method = RequestMethod.GET)
+@RequestMapping(value = "/remove/{id}",method = RequestMethod.GET)
 public List<TimeCard> remove(@PathVariable long id){
  timeCardRep.delete(id);
 return timeCardRep.findAll();}
