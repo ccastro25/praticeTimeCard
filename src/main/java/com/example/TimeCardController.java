@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by castro on 10/27/16.
  */
-@RestController(value = "/bookings")
+@RestController(value = "/timeCard")
 public class TimeCardController {
 
     private TimeCardRep timeCardRep;
@@ -26,7 +26,7 @@ public List<TimeCard> getAll(){
 
 
 @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
-public List<TimeCard> getAffordable(@PathVariable String name){
+public List<TimeCard> getName (@PathVariable String name){
     return timeCardRep.findByName(name);
 }
 
