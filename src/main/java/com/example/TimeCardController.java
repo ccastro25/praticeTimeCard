@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by castro on 10/27/16.
  */
+@CrossOrigin
 @RestController(value = "/timeCard")
 public class TimeCardController {
 
@@ -37,7 +38,7 @@ public List<TimeCard> create (@RequestBody TimeCard timecards){
     return timeCardRep.findAll();
 }
 
-@RequestMapping(value = "/remove/{id}",method = RequestMethod.GET)
+@RequestMapping(value = "/remove/{id}",method = RequestMethod.POST)
 public List<TimeCard> remove(@PathVariable long id){
  timeCardRep.delete(id);
 return timeCardRep.findAll();}
